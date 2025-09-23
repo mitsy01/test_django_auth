@@ -40,12 +40,12 @@ def sign_in(request):
     return render(request=request, template_name="sign_in.html", context=dict(form=form))
     
 
-@login_required(login_url="/users/sign_in/")
+@login_required(login_url="/sign_in/")
 def index(request):
     return render(request=request, template_name="index.html")
 
 
-@login_required(login_url="/users/sign_up/")
+@login_required(login_url="/sign_up/")
 def logout_func(request):
         logout(request)
         messages.success(request, "Ви успішно вийшли")
