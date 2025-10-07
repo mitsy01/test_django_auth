@@ -12,3 +12,5 @@ class Contact(models.Model):
     user = models.ForeignKey("UserManager.MySuperUser", on_delete=models.CASCADE)
     
     
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
