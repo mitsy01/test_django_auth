@@ -12,8 +12,14 @@
               <a class="nav-link active" href="{% url 'get_contacts'%}">Список контактів</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="{% url 'add_contact'%}">Додати контакнт</a>
+            <a class="nav-link active" href="{% url 'add_contact'%}">Додати контакт</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'get_add_form'%}">Додати зустріч</a>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'planners'%}">Зустріч</a>
+        </li>
+      </li>
         {% else %}
             <li class="nav-item">
                 <a class="nav-link active" href="{% url 'sign_in'%}">Вхід</a>

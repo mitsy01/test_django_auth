@@ -30,9 +30,9 @@ class PlannerForm(forms.ModelForm):
         required=False,
         widget=forms.TextInput(attrs={"class": "form-control"})
     )
-    link = forms.URLInput(
+    link = forms.URLField(
         label="Посилання для онлайн зустрічі",
-        max_lenght=500,
+        max_length=500,
         required=False,
         widget=forms.URLInput(attrs={"class": "form-control"})
     )
