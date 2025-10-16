@@ -11,7 +11,7 @@
             <th>Тема</th>
             <th>Адреса</th>
             <th>Meet/Zoom</th>
-            <th>Прийнята</th>
+            <th>Дія</th>
         </tr>
     </tread>
     <tbody>
@@ -25,8 +25,12 @@
                 <td>{{ planner.address }}</td>
                 <td><a href="{{ planner.link }}">{{ planner.link }}</a></td>
                 <td>
-                    <input type="checkbox" disabled {% if planner.accepted %} checked {% endif %}>
-                    <td>{{ planner.accepted }}</td>
+                    {% if planner.accepted == None %}
+                        <a href="{% url 'accept'%}" class="btn btn-succes">Прийняти</a> 
+                        <a href="{% url 'reject'%}" class="btn btn-danger">відхилити</a> 
+                    {% else %}
+                        <input type="checkbox" disabled {% if planner.accepted %} checked {% endif %}>
+                    {% endif%}
                 </td>
             </tr>
         {% endfor %}
